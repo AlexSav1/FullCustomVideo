@@ -31,8 +31,11 @@ class VideoPlaybackVC: UIViewController {
         let playerItem = AVPlayerItem(url: videoURL as URL)
         avPlayer.replaceCurrentItem(with: playerItem)
         
+        //scrubby slo-mo
+        self.avPlayer.playImmediately(atRate: 0.5)
         
-        avPlayer.play()
+        //no slo-mo
+        //avPlayer.play()
         
     }
     

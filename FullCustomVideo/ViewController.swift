@@ -61,9 +61,9 @@ class ViewController: UIViewController, AVCaptureFileOutputRecordingDelegate {
         previewLayer = AVCaptureVideoPreviewLayer(session: captureSession)
         previewLayer.frame = camPreview.bounds
         previewLayer.videoGravity = AVLayerVideoGravityResizeAspectFill
-//        [view.layer insertSublayer:backgroundLayer below:yourLabel.layer]
+
         camPreview.layer.insertSublayer(previewLayer, below: self.recordButton.layer)
-//        camPreview.layer.addSublayer(previewLayer)
+
     }
     
     //MARK:- Setup Camera
@@ -225,7 +225,7 @@ class ViewController: UIViewController, AVCaptureFileOutputRecordingDelegate {
             print("Error recording movie: \(error!.localizedDescription)")
         } else {
             
-            let videoRecorded = outputURL! as URL
+            //let videoRecorded = outputURL! as URL
             
             performSegue(withIdentifier: "showLibrary", sender: self)
             
