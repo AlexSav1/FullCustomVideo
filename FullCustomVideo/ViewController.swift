@@ -13,11 +13,11 @@ class ViewController: UIViewController, AVCaptureFileOutputRecordingDelegate {
     
     @IBOutlet weak var camPreview: UIView!
     
+    @IBOutlet weak var recordButton: UIButton!
+    
     let captureSession = AVCaptureSession()
     
     let movieOutput = AVCaptureMovieFileOutput()
-    
-    @IBOutlet weak var recordButton: UIButton!
     
     var previewLayer: AVCaptureVideoPreviewLayer!
     
@@ -42,21 +42,17 @@ class ViewController: UIViewController, AVCaptureFileOutputRecordingDelegate {
     }
     
     @IBAction func recordButtonPressed(_ sender: Any) {
-        
         self.startRecording()
-        
     }
     
     
     @IBAction func libraryButtonPressed(_ sender: Any) {
-        
-        //self.videoCollectionVC.filePathArray = self.filePathArray
-        //self.navigationController?.pushViewController(self.videoCollectionVC, animated: true)
         self.performSegue(withIdentifier: "showLibrary", sender: self)
     }
     
     
     func setupPreview() {
+        
         // Configure previewLayer
         previewLayer = AVCaptureVideoPreviewLayer(session: captureSession)
         previewLayer.frame = camPreview.bounds
@@ -66,8 +62,8 @@ class ViewController: UIViewController, AVCaptureFileOutputRecordingDelegate {
 
     }
     
-    //MARK:- Setup Camera
     
+    //MARK:- Setup Camera
     func setupSession() -> Bool {
         
         captureSession.sessionPreset = AVCaptureSessionPresetHigh

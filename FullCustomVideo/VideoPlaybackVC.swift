@@ -15,6 +15,7 @@ class VideoPlaybackVC: UIViewController {
     var avPlayerLayer: AVPlayerLayer!
     
     var videoURL: URL!
+    
     //connect this to your uiview in storyboard
     @IBOutlet weak var videoView: UIView!
     
